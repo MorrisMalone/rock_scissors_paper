@@ -10,24 +10,24 @@
 <body>
     <script>
 
-        // the human player makes his choice
+        // the human player makes his choice and it is converted to the form
+        // "first letter Uppercase and the rest Lowercase"
 
-        asked = prompt('What do you choose: Rock, Paper or Scissors?', '');
-        humanChoice = asked.charAt(0).toUpperCase() + asked.slice(1).toLowerCase();
-
-
-
-        // the human player's choice is transformed to a standard
-        // with capital as first letter and the rest in lowercase
+        askChoice = prompt('What do you choose: Rock, Paper or Scissors?', '');
+        playerSelection = askChoice.charAt(0).toUpperCase() + askChoice.slice(1).toLowerCase();
 
 
 
+        
 
-        let randomPlay = Math.floor(Math.random() * Math.floor(3));
+
+        
+
+        
 
         // to get the random computer choice
-        function computerPlay() {
-            
+        function computerPlay(randomplay) {
+            var randomPlay = Math.floor(Math.random() * Math.floor(3));
             if (randomPlay == 0) {
                 return 'Rock';
             }
@@ -42,18 +42,18 @@
         computerSelection = computerPlay();
         // The function that plays the round
 
-        function playRound(computerSelection, humanChoice) {
+        function playRound(computerSelection, playerSelection) {
 
-            if (((computerSelection == 'Rock') && (humanChoice == 'Scissors')) || ((computerSelection == 'Paper') && (humanChoice == 'Rock')) || ((computerSelection == 'Scissors') && (humanChoice == 'Paper'))) {
-                let result = 'You lost! ' + computerSelection + ' beats ' + humanChoice + '.';
+            if (((computerSelection == 'Rock') && (playerSelection == 'Scissors')) || ((computerSelection == 'Paper') && (playerSelection == 'Rock')) || ((computerSelection == 'Scissors') && (playerSelection == 'Paper'))) {
+                let result = 'You lost! ' + computerSelection + ' beats ' + playerSelection + '.';
                 return result;
             }
-            else if (computerSelection == humanChoice) {
-                let result = 'It\'s a tie! You both chose ' + humanChoice + '.';
+            else if (computerSelection == playerSelection) {
+                let result = 'It\'s a tie! You both chose ' + playerSelection + '.';
                 return result;
             }
             else {
-                let result = 'You won! ' + humanChoice + ' beats ' + computerSelection + '.';
+                let result = 'You won! ' + playerSelection + ' beats ' + computerSelection + '.';
                 return result;
             }
         }
@@ -61,7 +61,7 @@
 
 
 
-        console.log(playRound(computerSelection, humanChoice));
+        console.log(playRound(computerSelection, playerSelection));
 
 
 
