@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>The Best Rock-Paper-Scissors Game Ever</title>
+
+</head>
+
+<body>
+    <script>
+
+        // the human player makes his choice
+
+        asked = prompt('What do you choose: Rock, Paper or Scissors?', '');
+        humanChoice = asked.charAt(0).toUpperCase() + asked.slice(1).toLowerCase();
+
+
+
+        // the human player's choice is transformed to a standard
+        // with capital as first letter and the rest in lowercase
+
+
+
+
+        let randomPlay = Math.floor(Math.random() * Math.floor(3));
+
+        // to get the random computer choice
+        function computerPlay() {
+            
+            if (randomPlay == 0) {
+                return 'Rock';
+            }
+            else if (randomPlay == 1) {
+                return 'Paper';
+            }
+            else {
+                return 'Scissors';
+            }
+        }
+
+        computerSelection = computerPlay();
+        // The function that plays the round
+
+        function playRound(computerSelection, humanChoice) {
+
+            if (((computerSelection == 'Rock') && (humanChoice == 'Scissors')) || ((computerSelection == 'Paper') && (humanChoice == 'Rock')) || ((computerSelection == 'Scissors') && (humanChoice == 'Paper'))) {
+                let result = 'You lost! ' + computerSelection + ' beats ' + humanChoice + '.';
+                return result;
+            }
+            else if (computerSelection == humanChoice) {
+                let result = 'It\'s a tie! You both chose ' + humanChoice + '.';
+                return result;
+            }
+            else {
+                let result = 'You won! ' + humanChoice + ' beats ' + computerSelection + '.';
+                return result;
+            }
+        }
+
+
+
+
+        console.log(playRound(computerSelection, humanChoice));
+
+
+
+    </script>
+
+</body>
+
+</html>
