@@ -14,16 +14,15 @@
         // "first letter Uppercase and the rest Lowercase"
 
         function askChoice() {
-            return userChoice = prompt('What do you choose: Rock, Paper or Scissors?', '');
+            return userChoice = prompt('Choose your weapon: Rock, Paper or Scissors?', '');
         }
-        var userChoice;
-
+        
         function userSelection() {
             return userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
-
         }
 
         // to get the random computer choice
+
         function computerPlay(randomplay) {
             var randomPlay = Math.floor(Math.random() * Math.floor(3));
             if (randomPlay == 0) {
@@ -45,36 +44,42 @@
                 return 'Computer wins ! ' + computerSelection + ' beats ' + playerSelection;
             }
             else if (computerSelection == playerSelection) {
-                return  'It is a tie ! You both chose' + playerSelection;
+                return 'It is a tie ! You both chose ' + playerSelection;
             }
             else {
-                return  'You won ! ' + playerSelection + ' beats ' + computerSelection;
+                return 'You won ! ' + playerSelection + ' beats ' + computerSelection;
             }
         }
 
-        // to play a 5 round game
-        function game() {
+        // to play a 5 rounds game
+
+        function game() {            
+            // variables to store the points after each round
+
+            var userPoint = 0;
+            var computerPoint = 0;
+            n = prompt('How many rounds do you want to play agains me?', '');
             //for the iteration
-            for (var i = 0; i < 5; i++) {
-            // I have no clue how to store values
+            for (var i = 0; i < n; i++) {
                 playerSelection = userSelection(askChoice());
                 computerSelection = computerPlay();
                 round = playRound(computerSelection, playerSelection);
-                // variables to store the points after each round
-                var userPoint;
-                var computerPoint;
+                
                 // case where the computer wins
                 if (round.charAt(0) == 'C') {
                     console.log(round);
-                // case where it is a tie
+                    computerPoint++;
+                    // case where it is a tie
                 } else if (round.charAt(0) == 'I') {
                     console.log(round);
-                // case where the user wins
+                    // case where the user wins
                 } else {
                     console.log(round);
+                    userPoint++;
                 }
+            
                 //trying to figure out how to finish the loop and print the result
-                if (i == 4) {
+            if (i == (n -1)) {
                     if (userPoint < computerPoint) {
                         console.log('Sorry but you lost. Have another go !');
                     } else if (userPoint > computerPoint) {
@@ -83,19 +88,9 @@
                         console.log('It is a tie. Should we play again ?')
                     }
                 }
-                
-                
-
-
-
-            }
+            }           
         }
-
-
         console.log(game());
-
-
-
     </script>
 
 </body>
