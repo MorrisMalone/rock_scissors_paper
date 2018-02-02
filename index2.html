@@ -60,6 +60,9 @@
                 playerSelection = userSelection(askChoice());
                 computerSelection = computerPlay();
                 round = playRound(computerSelection, playerSelection);
+                // variables to store the points after each round
+                var userPoint;
+                var computerPoint;
                 // case where the computer wins
                 if (round.charAt(0) == 'C') {
                     console.log(round);
