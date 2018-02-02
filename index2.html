@@ -42,38 +42,42 @@
         function playRound(computerSelection, playerSelection) {
 
             if (((computerSelection == 'Rock') && (playerSelection == 'Scissors')) || ((computerSelection == 'Paper') && (playerSelection == 'Rock')) || ((computerSelection == 'Scissors') && (playerSelection == 'Paper'))) {
-                var result = 1;
+                return 'Computer wins ! ' + computerSelection + ' beats ' + playerSelection;
             }
             else if (computerSelection == playerSelection) {
-                var result = 2;
+                return  'It is a tie ! You both chose' + playerSelection;
             }
             else {
-                var result = 3;
+                return  'You won ! ' + playerSelection + ' beats ' + computerSelection;
             }
         }
 
-
+        // to play a 5 round game
         function game() {
-        
+            //for the iteration
             for (var i = 0; i < 5; i++) {
+            // I have no clue how to store values
                 playerSelection = userSelection(askChoice());
                 computerSelection = computerPlay();
-                var computerPoint = 0;
-                var userPoint = 0;
-                if (playRound(computerSelection, playerSelection) == 1) {
-                    computerPoint += computerPoint++;
-                } else if (playRound(computerSelection, playerSelection) == 3) {
-                    userPoint += userPoint++;
-                e
-                } else;
-                
+                round = playRound(computerSelection, playerSelection);
+                // case where the computer wins
+                if (round.charAt(0) == 'C') {
+                    console.log(round);
+                // case where it is a tie
+                } else if (round.charAt(0) == 'I') {
+                    console.log(round);
+                // case where the user wins
+                } else {
+                    console.log(round);
+                }
+                //trying to figure out how to finish the loop and print the result
                 if (i == 4) {
                     if (userPoint < computerPoint) {
-                        return 'computer won';
+                        console.log('Sorry but you lost. Have another go !');
                     } else if (userPoint > computerPoint) {
-                        return 'you won';
+                        console.log('Bravo ! You won !');
                     } else {
-                        return 'it is a tie'
+                        console.log('It is a tie. Should we play again ?')
                     }
                 }
                 
