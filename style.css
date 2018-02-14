@@ -1,0 +1,112 @@
+body {
+    background-color: #222222;
+    margin: 0 auto;
+    color: #d1b720;
+}
+.container {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.small {
+    flex: 1;
+    text-align: center;
+    font-family: 'Rye', cursive;
+    font-size: 38px;
+}
+
+#game {
+    font-family: 'Rye', cursive;
+    font-size: 35px;
+    text-align: center;
+    height: 250px;
+    border: 1px solid #222222;
+}
+
+.winner {
+    border-top: 3px dotted #d1b720;
+    border-bottom: 3px dotted #d1b720;
+    padding: 15px 0px;
+}
+
+#playerScore {
+    font-size: 120px;
+}
+#computerScore {
+    font-size: 120px;
+}
+
+.vertical-container {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+            height: 400px;
+  }
+
+.main {
+    flex: 3;
+    max-width: 600px;
+}
+
+.title {
+    box-sizing: border-box;
+    font-size: 3em;
+    font-family: 'Black Ops One', cursive;
+    border-top: 2px solid #d1b720;
+    border-bottom: 2px solid #d1b720;
+    margin: 30px auto;
+    text-align: center;
+    max-width: 90%;
+}
+
+
+
+button {
+    border-radius: 50% 50% 50% 50%;
+    padding: 3em;
+    background-color: #222;
+    color: #d1b720;
+    border: 3px solid #d1b720;
+    padding: auto;
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+button:hover {
+    box-shadow: 0px 1px 1px 0px #d1b720, 0px 4px 4px 0px #d1b7205d;
+    background-color: #cfc58107;
+}
+
+button:focus {outline:0;}
+
+#rock {
+    float: left;
+}
+
+#weapon {
+    box-sizing: border-box;
+    font-family: 'Rye';
+    font-size: 38px;
+    text-align: center;
+    width: 80%;
+    padding-bottom: 5px;
+    margin: 10px auto;
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+
+#buttonChoice {
+    box-sizing: border-box;
+    margin: 10px auto;
+    text-align: center;
+    border-top: 2px solid #d1b720;
+    border-bottom: 2px solid #d1b720;
+    padding: 10px 0px;
+}
+
